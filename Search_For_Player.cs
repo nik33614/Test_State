@@ -80,7 +80,7 @@ public class Search_For_Players : MonoBehaviour
 
         else
         {
-            PlayerPrefs.SetInt("id_opponent", Convert.ToInt32(www.text));
+            PlayerPrefs.SetInt("opponent_id", Convert.ToInt32(www.text));
             StartCoroutine(Get_Health());
         }
     }
@@ -88,7 +88,7 @@ public class Search_For_Players : MonoBehaviour
     private IEnumerator Get_Health()
     {
         WWWForm form = new WWWForm();
-        form.AddField("id", PlayerPrefs.GetInt("id_opponent").ToString());
+        form.AddField("id", PlayerPrefs.GetInt("opponent_id").ToString());
 
 
         WWW www = new WWW("http://doublenikmak.ru/Test_State/System/Get_Health.php", form);
