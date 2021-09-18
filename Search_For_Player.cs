@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Search_For_Player : MonoBehaviour
+public class Search_For_Players : MonoBehaviour
 {
     /// <summary>
     /// This script does auto_searach for players with the same level, who were in the game ater cooldown.
     /// 1. Get Level of Player from server(id -> level)
     /// 2. Get Damage of Player from server(id -> damage)
-    /// 3. Get Health of player's virus from server(id -> health)
-    /// 4. Send information of level on server(id -> id of opponent)
-    /// 5. Get Opponent's health(id -> health)
-    /// 6. Get opponent's damage(id-> damage)
-    /// 7. Show animation
+    /// 3. Send information of level on server(id -> id of opponent)
+    /// 4. Get Opponent's health(id -> health)
+    /// 5. Show animation
     /// </summary>
 
     void Start()
     {
         StartCoroutine(Get_Level());
     }
-    
+
     private IEnumerator Get_Level()
     {
         WWWForm form = new WWWForm();
@@ -32,7 +30,7 @@ public class Search_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
+            Debug.Log("Произошла ошибка: " + www.error);
             yield break;
         }
 
@@ -54,35 +52,13 @@ public class Search_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
+            Debug.Log("Произошла ошибка: " + www.error);
             yield break;
         }
 
         else
         {
             PlayerPrefs.SetInt("damage", Convert.ToInt32(www.text));
-            StartCoroutine(Get_Health());
-        }
-    }
-
-    private IEnumerator Get_Health()
-    {
-        WWWForm form = new WWWForm();
-        form.AddField("id", PlayerPrefs.GetInt("id").ToString());
-
-
-        WWW www = new WWW("http://doublenikmak.ru/Test_State/System/Get_Health.php", form);
-
-        yield return www;
-        if (www.error != null)
-        {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
-            yield break;
-        }
-
-        else
-        {
-            PlayerPrefs.SetInt("health", Convert.ToInt32(www.text));
             StartCoroutine(Send_Level());
         }
     }
@@ -98,35 +74,13 @@ public class Search_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
+            Debug.Log("Произошла ошибка: " + www.error);
             yield break;
         }
 
         else
         {
             PlayerPrefs.SetInt("id_opponent", Convert.ToInt32(www.text));
-            StartCoroutine(Get_Health());
-        }
-    }
-
-    private IEnumerator Get_Damage()
-    {
-        WWWForm form = new WWWForm();
-        form.AddField("id", PlayerPrefs.GetInt("id_opponent").ToString());
-
-
-        WWW www = new WWW("http://doublenikmak.ru/Test_State/System/Get_Damage.php", form);
-
-        yield return www;
-        if (www.error != null)
-        {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
-            yield break;
-        }
-
-        else
-        {
-            PlayerPrefs.SetInt("opponent_damage", Convert.ToInt32(www.text));
             StartCoroutine(Get_Health());
         }
     }
@@ -142,7 +96,7 @@ public class Search_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Ïðîèçîøëà îøèáêà: " + www.error);
+            Debug.Log("Произошла ошибка: " + www.error);
             yield break;
         }
 
