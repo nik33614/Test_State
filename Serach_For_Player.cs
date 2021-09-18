@@ -20,13 +20,7 @@ public class Serach_For_Player : MonoBehaviour
     {
         StartCoroutine(Get_Level());
     }
-
-
-    void Update()
-    {
-        
-    }
-
+    
     private IEnumerator Get_Level()
     {
         WWWForm form = new WWWForm();
@@ -38,7 +32,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
@@ -60,7 +54,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
@@ -82,7 +76,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
@@ -104,7 +98,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
@@ -126,7 +120,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
@@ -148,7 +142,7 @@ public class Serach_For_Player : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
