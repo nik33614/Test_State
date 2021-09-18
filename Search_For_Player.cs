@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Serach_For_Player : MonoBehaviour
+public class Search_For_Player : MonoBehaviour
 {
     /// <summary>
     /// This script does auto_searach for players with the same level, who were in the game ater cooldown.
