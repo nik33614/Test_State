@@ -11,7 +11,7 @@ public class Results : MonoBehaviour
     /// 3. Turn on opponent's cooldown
     /// 4. Turn on player's cooldown
     /// 5. Increase winner's level
-    /// 6. Give to winner 10% of opponent's money + reward
+    /// 6. Give to winner 10% of opponent's money + reward.
     /// 
     /// </summary>
 
@@ -33,7 +33,7 @@ public class Results : MonoBehaviour
         yield return www;
         if (www.error != null)
         {
-            Debug.Log("Произошла ошибка: " + www.error);
+            Debug.Log("ГЏГ°Г®ГЁГ§Г®ГёГ«Г  Г®ГёГЁГЎГЄГ : " + www.error);
             yield break;
         }
 
